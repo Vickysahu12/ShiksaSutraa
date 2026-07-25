@@ -1,9 +1,27 @@
-import React from 'react'
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/section/Hero";
+import StatsBar from "./components/section/StatsBar";
+import WhyChooseUs from "./components/section/WhyChooseUs";
+import PopularPrograms from "./components/section/PopularPrograms";
+import FreeMasterClass from "./components/section/FreeMasterClass";
+import Testimonials from "./components/section/Testimonials";
+import AsSeenOn from "./components/section/AsSeenOn";
+import CTASection from "./components/section/CTASection";
 
-const App = () => {
+export default function App() {
   return (
-    <div>App</div>
-  )
+    <div className="font-body bg-cream overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <StatsBar />
+      <WhyChooseUs />
+      <PopularPrograms />
+      <FreeMasterClass />
+      <Testimonials />
+      <AsSeenOn />
+      <CTASection />
+      <Footer />
+    </div>
+  );
 }
-
-export default App
