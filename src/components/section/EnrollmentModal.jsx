@@ -173,10 +173,10 @@ export default function EnrollmentModal({ isOpen, onClose }) {
                           className="w-full rounded-xl border border-ink/10 bg-white/60 px-4 py-3.5 text-sm text-ink outline-none transition focus:border-orange focus:ring-4 focus:ring-orange/10"
                         >
                           <option value="">Select a program</option>
-                          <option value="class-9-10">Class 9–10</option>
-                          <option value="class-11-12">Class 11–12</option>
-                          <option value="competitive">Competitive Exams</option>
-                          <option value="other">Other</option>
+                          <option value="Digital Marketing">AI-Powered Advanced Digital Marketing</option>
+                          <option value="Graphic Design">AI-Powered Graphic Designing</option>
+                          <option value="Canva">Advance Canva Course with AI</option>
+                          <option value="other">Content Creation & Marketing Mastery</option>
                         </select>
                       </div>
                     </div>
