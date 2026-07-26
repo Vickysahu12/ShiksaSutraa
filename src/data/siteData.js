@@ -84,12 +84,22 @@ export const programs = [
     tagStyle: "upcoming",
     title: "AI-Powered Advanced Digital Marketing",
     meta: "Batch 11 · 12 Weeks · Offline Training",
+    duration: "12 Weeks",
+    mode: "Offline · Chandigarh",
+    overview:
+      "A hands-on program that takes you from marketing fundamentals to running real ad campaigns with AI tools, built around live client-style projects instead of theory slides.",
     features: [
       "Guest Lectures by Industry Experts",
       "Website Blueprint Sessions",
       "AI for Social Performance",
       "Real Ad Campaigns & Testing",
       "Startup Project Implementation",
+    ],
+    curriculum: [
+      "Marketing fundamentals & funnel strategy",
+      "SEO, SEM and AI-assisted content tools",
+      "Paid ads: Meta, Google, and performance tracking",
+      "Capstone: launch a real campaign for a live brief",
     ],
     cta: "Prebook Now",
   },
@@ -98,12 +108,22 @@ export const programs = [
     tagStyle: "soon",
     title: "AI-Powered Graphic Designing",
     meta: "12 Weeks · Offline Training",
+    duration: "12 Weeks",
+    mode: "Offline · Chandigarh",
+    overview:
+      "Learn design the way studios actually work — AI-assisted workflows, real client briefs, and a portfolio you can show off by the end of it.",
     features: [
       "Learn AI Tools for Designers",
       "The Website Creation Blueprint",
       "AI for Visual Performance",
       "Build Real World Projects",
       "Work on Live Design Challenges",
+    ],
+    curriculum: [
+      "Design fundamentals: layout, color, typography",
+      "AI tools for concept generation and mockups",
+      "Web & social design systems",
+      "Capstone: full brand identity project",
     ],
     cta: "Prebook Now",
   },
@@ -112,12 +132,22 @@ export const programs = [
     tagStyle: "hot",
     title: "Advance Canva Course with AI",
     meta: "By Suraj K. Verma",
+    duration: "6 Weeks",
+    mode: "Offline · Chandigarh",
+    overview:
+      "Go from basic Canva templates to producing scroll-stopping, on-brand content fast — taught by a working creator, not just a curriculum.",
     features: [
       "Master Canva with AI",
       "Design for Social Media",
       "AI Tools for Creators",
       "Real Projects & Templates",
       "Build Your Portfolio",
+    ],
+    curriculum: [
+      "Canva fundamentals & Magic Studio tools",
+      "Social media templates that actually convert",
+      "Brand kits and content systems",
+      "Capstone: build a client-ready portfolio",
     ],
     cta: "Prebook Your Seat",
   },
@@ -126,12 +156,22 @@ export const programs = [
     tagStyle: "soon",
     title: "Content Creation & Marketing Mastery",
     meta: "10 Weeks · Offline Training",
+    duration: "10 Weeks",
+    mode: "Offline · Chandigarh",
+    overview:
+      "For creators who want to turn content into a career — strategy, production, and monetization, taught end to end.",
     features: [
       "Content Strategy & Planning",
       "Video Content Creation",
       "Social Media Marketing",
       "Personal Branding",
       "Monetization Strategies",
+    ],
+    curriculum: [
+      "Content strategy & audience research",
+      "Shooting and editing on a phone budget",
+      "Growth systems across Instagram & YouTube",
+      "Capstone: a 30-day content calendar, executed live",
     ],
     cta: "Prebook Now",
   },
@@ -227,6 +267,63 @@ export const footerLinks = {
     { label: "FAQ", href: "#" },
   ],
 };
+
+export const journeySteps = [
+  {
+    title: "Enroll & Onboard",
+    desc: "Pick your track, meet your mentor, and get your learning roadmap on day one.",
+  },
+  {
+    title: "Learn Live",
+    desc: "Real-time sessions with industry experts — ask questions, get feedback, no pre-recorded filler.",
+  },
+  {
+    title: "Build Real Projects",
+    desc: "Apply every concept to live briefs and case studies, not toy exercises.",
+  },
+  {
+    title: "Get Placement Ready",
+    desc: "Portfolio, mock interviews, and placement assistance to help you land the role.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "Are the classes live or pre-recorded?",
+    answer:
+      "All core sessions are live, taught by industry mentors. Every session is recorded too, so you can revisit anytime if you miss a class or want a refresher.",
+  },
+  {
+    question: "Do I need any prior experience to join?",
+    answer:
+      "No. Our programs are built for beginners as well as working professionals looking to upskill. Mentors adjust pacing based on the batch's starting level.",
+  },
+  {
+    question: "Is the certificate recognised by employers?",
+    answer:
+      "Yes — the certificate is backed by real project work, not just attendance, and is shareable directly on LinkedIn. Many of our alumni have used it in job applications successfully.",
+  },
+  {
+    question: "What kind of placement assistance do you offer?",
+    answer:
+      "You get portfolio reviews, mock interviews, resume guidance, and access to our hiring partner network. We assist with placements — final selection depends on your performance in interviews.",
+  },
+  {
+    question: "Can I pay in installments?",
+    answer:
+      "Yes, flexible EMI options are available for all programs. Reach out to our team during enrollment and we'll walk you through the plans that fit your budget.",
+  },
+  {
+    question: "What if I miss a live class or fall behind?",
+    answer:
+      "Every class is recorded and available on your dashboard. You also get access to 1:1 mentorship to help you catch up without losing momentum.",
+  },
+  {
+    question: "Do you offer a refund if the course isn't right for me?",
+    answer:
+      "We offer a refund window within the first week of a batch starting — full terms are shared during enrollment so there are no surprises later.",
+  },
+];
 
 export const contactInfo = {
   phone: "+91 98765 43210",
