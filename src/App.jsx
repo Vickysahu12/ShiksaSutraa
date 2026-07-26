@@ -8,7 +8,7 @@ import PopularPrograms from "./components/section/PopularPrograms";
 import FreeMasterClass from "./components/section/FreeMasterClass";
 import Testimonials from "./components/section/Testimonials";
 import AsSeenOn from "./components/section/AsSeenOn";
-import FAQ from "./components/section/FAQ";
+import FAQ from "./components/section/Faq";
 import CTASection from "./components/section/CTASection";
 
 export default function App() {
