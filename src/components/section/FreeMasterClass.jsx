@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { PiGraduationCapDuotone, PiUsersThreeDuotone } from "react-icons/pi";
-import { masterclassStats } from "../../data/siteData";
-import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
+import { masterclassStats } from "../../data/SiteData";
+import { fadeUp, revealViewport, staggerContainer } from "../../utils/Animation";
 
 export default function FreeMasterClass() {
   return (

@@ -1,6 +1,6 @@
 import { FiInstagram, FiYoutube, FiLinkedin, FiSend, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { PiBookOpenTextDuotone } from "react-icons/pi";
-import { footerLinks, contactInfo } from "../../data/siteData";
+import { footerLinks, contactInfo } from "../../data/SiteData";
 
 function Column({ title, links }) {
   return (

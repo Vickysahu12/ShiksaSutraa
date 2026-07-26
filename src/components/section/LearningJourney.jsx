@@ -5,8 +5,8 @@ import {
   PiHammerDuotone,
   PiBriefcaseDuotone,
 } from "react-icons/pi";
-import { journeySteps } from "../../data/siteData";
-import { fadeUp, revealViewport } from "../../utils/animation";
+import { journeySteps } from "../../data/SiteData";
+import { fadeUp, revealViewport } from "../../utils/Animation";
 
 const icons = [PiUserPlusDuotone, PiChalkboardTeacherDuotone, PiHammerDuotone, PiBriefcaseDuotone];
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiPlus, FiMessageCircle } from "react-icons/fi";
-import { faqs } from "../../data/siteData";
-import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
+import { faqs } from "../../data/SiteData";
+import { fadeUp, revealViewport, staggerContainer } from "../../utils/Animation";
 
 function FAQItem({ faq, index, isOpen, onToggle }) {
   return (
