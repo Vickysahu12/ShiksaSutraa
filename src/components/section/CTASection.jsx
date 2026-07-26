@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { fadeUp, revealViewport, staggerContainer } from "../../utils/Animation";
+import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
 
 export default function CTASection() {
   return (

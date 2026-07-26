@@ -9,8 +9,8 @@ import {
   FiMapPin,
 } from "react-icons/fi";
 
-import { programs } from "../../data/SiteData";
-import { fadeUp, revealViewport, staggerContainer } from "../../utils/Animation";
+import { programs } from "../../data/siteData";
+import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
 
 import EnrollmentModal from "./EnrollmentModal";
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import { PiBookOpenTextDuotone } from "react-icons/pi";
-import { navLinks } from "../../data/SiteData.js";
+import { navLinks } from "../../data/siteData.js";
 import EnrollmentModal from "../section/EnrollmentModal.jsx";
 
 export default function Navbar() {

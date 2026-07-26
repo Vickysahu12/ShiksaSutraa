@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiPlay } from "react-icons/fi";
-import { heroBadges } from "../../data/SiteData";
-import { fadeUp, staggerContainer, tapeIn } from "../../utils/Animation";
+import { heroBadges } from "../../data/siteData";
+import { fadeUp, staggerContainer, tapeIn } from "../../utils/animation";
 
 // This is the full section background
 import hero from "../../assets/images/hero.webp";

@@ -10,8 +10,8 @@ import {
   PiCheckBold,
 } from "react-icons/pi";
 import { FiArrowRight, FiX } from "react-icons/fi";
-import { whyUs } from "../../data/SiteData";
-import { fadeUp, revealViewport, staggerContainer } from "../../utils/Animation";
+import { whyUs } from "../../data/siteData";
+import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
 
 const icons = [
   PiVideoCameraDuotone,

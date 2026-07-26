@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
-import { testimonials } from "../../data/SiteData";
-import { fadeUp, revealViewport } from "../../utils/Animation";
+import { testimonials } from "../../data/siteData";
+import { fadeUp, revealViewport } from "../../utils/animation";
 
 function TCard({ t }) {
   return (

@@ -1,4 +1,4 @@
-import { asSeenOn } from "../../data/SiteData";
+import { asSeenOn } from "../../data/siteData";
 
 export default function AsSeenOn() {
   const loop = [...asSeenOn, ...asSeenOn];

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { PiUsersThreeDuotone, PiChalkboardTeacherDuotone, PiMonitorPlayDuotone, PiTrophyDuotone } from "react-icons/pi";
-import { stats } from "../../data/SiteData";
-import { fadeUp, revealViewport, staggerContainer } from "../../utils/Animation";
+import { stats } from "../../data/siteData";
+import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
 
 const icons = [PiUsersThreeDuotone, PiChalkboardTeacherDuotone, PiMonitorPlayDuotone, PiTrophyDuotone];
 
