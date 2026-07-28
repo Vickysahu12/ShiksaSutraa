@@ -60,7 +60,10 @@ export default function Navbar() {
       {/* =========================
           NAVBAR
       ========================== */}
-      <header
+      <motion.header
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-cream/90 backdrop-blur-md shadow-[0_2px_20px_rgba(11,29,58,0.08)]"
@@ -76,9 +79,13 @@ export default function Navbar() {
             className="flex shrink-0 items-center gap-2"
             onClick={() => setOpen(false)}
           >
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-ink text-cream">
+            <motion.span
+              whileHover={{ rotate: -8, scale: 1.08 }}
+              transition={{ type: "spring", stiffness: 300, damping: 12 }}
+              className="grid h-10 w-10 place-items-center rounded-xl bg-ink text-cream"
+            >
               <PiBookOpenTextDuotone className="text-xl" />
-            </span>
+            </motion.span>
 
             <span className="leading-tight">
               <span className="block font-display text-lg font-bold tracking-tight text-ink">
@@ -110,12 +117,14 @@ export default function Navbar() {
           {/* =========================
               DESKTOP ENROLL BUTTON
           ========================== */}
-          <button
+          <motion.button
             onClick={handleEnrollClick}
-            className="hidden items-center rounded-full bg-orange px-6 py-2.5 font-display font-semibold text-cream shadow-[0_6px_20px_rgba(255,107,26,0.35)] transition-transform hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(255,107,26,0.45)] lg:inline-flex"
+            whileHover={{ y: -2, boxShadow: "0 10px 24px rgba(255,107,26,0.45)" }}
+            whileTap={{ scale: 0.96 }}
+            className="hidden items-center rounded-full bg-orange px-6 py-2.5 font-display font-semibold text-cream shadow-[0_6px_20px_rgba(255,107,26,0.35)] lg:inline-flex"
           >
             Enroll Now
-          </button>
+          </motion.button>
 
           {/* =========================
               MOBILE MENU BUTTON
@@ -128,7 +137,7 @@ export default function Navbar() {
             <HiMenu className="text-2xl" />
           </button>
         </nav>
-      </header>
+      </motion.header>
 
       {/* =========================
           MOBILE DRAWER

@@ -27,19 +27,24 @@ function Card({ item, i, onOpen }) {
 
   return (
     <div className="group relative flex flex-col text-left rounded-2xl border border-ink/8 bg-white p-6 sm:p-7 shrink-0 w-[16rem] sm:w-auto transition-all duration-300 hover:-translate-y-1.5 hover:border-orange/30 hover:shadow-[0_16px_32px_rgba(11,29,58,0.08)]">
-      <span className="grid place-items-center w-14 h-14 rounded-2xl bg-ink/5 text-ink text-2xl transition-colors group-hover:bg-orange group-hover:text-cream">
+      <motion.span
+        whileHover={{ rotate: -10, scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 300, damping: 12 }}
+        className="grid place-items-center w-14 h-14 rounded-2xl bg-ink/5 text-ink text-2xl transition-colors group-hover:bg-orange group-hover:text-cream"
+      >
         <Icon />
-      </span>
+      </motion.span>
       <p className="mt-5 font-display font-bold text-ink text-base">{item.title}</p>
       <p className="mt-1.5 text-sm text-ink/50 leading-relaxed flex-1">{item.desc}</p>
-      <button
+      <motion.button
         type="button"
+        whileTap={{ scale: 0.94 }}
         onClick={() => onOpen(item)}
         className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-display font-semibold text-orange"
       >
         Know More
         <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-      </button>
+      </motion.button>
     </div>
   );
 }
@@ -89,34 +94,62 @@ function DetailModal({ item, index, onClose }) {
             <FiX className="text-lg" />
           </button>
 
-          <span className="grid place-items-center w-14 h-14 rounded-2xl bg-orange text-cream text-2xl">
+          <motion.span
+            initial={{ scale: 0.6, rotate: -8, opacity: 0 }}
+            animate={{ scale: 1, rotate: 0, opacity: 1 }}
+            transition={{ delay: 0.1, type: "spring", stiffness: 280, damping: 16 }}
+            className="grid place-items-center w-14 h-14 rounded-2xl bg-orange text-cream text-2xl"
+          >
             <Icon />
-          </span>
+          </motion.span>
 
-          <h3 className="mt-5 font-display font-extrabold text-2xl text-ink">
+          <motion.h3
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.3 }}
+            className="mt-5 font-display font-extrabold text-2xl text-ink"
+          >
             {item.title}
-          </h3>
-          <p className="mt-1.5 text-sm text-ink/55">{item.desc}</p>
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
+            className="mt-1.5 text-sm text-ink/55"
+          >
+            {item.desc}
+          </motion.p>
 
           <ul className="mt-6 space-y-3">
-            {item.points.map((point) => (
-              <li key={point} className="flex items-start gap-2.5 text-sm text-ink/70">
+            {item.points.map((point, i) => (
+              <motion.li
+                key={point}
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.25 + i * 0.08, duration: 0.3 }}
+                className="flex items-start gap-2.5 text-sm text-ink/70"
+              >
                 <span className="grid place-items-center w-5 h-5 rounded-full bg-orange/10 text-orange shrink-0 mt-0.5">
                   <PiCheckBold className="text-[10px]" />
                 </span>
                 {point}
-              </li>
+              </motion.li>
             ))}
           </ul>
 
-          <a
+          <motion.a
             href="#programs"
             onClick={onClose}
-            className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 font-display font-semibold text-cream transition-transform hover:-translate-y-0.5"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25 + item.points.length * 0.08 + 0.1 }}
+            className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 font-display font-semibold text-cream"
           >
             Explore Courses
             <FiArrowRight />
-          </a>
+          </motion.a>
           </motion.div>
         </div>
       </motion.div>

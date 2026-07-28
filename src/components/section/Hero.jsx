@@ -12,11 +12,14 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden min-h-[92vh] flex items-center bg-ink"
     >
-      {/* background photo */}
-      <img
+      {/* background photo — slow ken-burns zoom on load */}
+      <motion.img
         src={hero}
         alt=""
         aria-hidden="true"
+        initial={{ scale: 1.15 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
@@ -103,12 +106,39 @@ export default function Hero() {
                 custom={i % 2 === 0 ? -2 : 2}
                 className="rounded-lg bg-cream/10 backdrop-blur-md border border-cream/15 px-4 py-2.5 text-xs sm:text-sm font-semibold text-black"
               >
-                {badge.label}
+                <motion.span
+                  className="block"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{
+                    duration: 3 + i * 0.3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.2 + i * 0.15,
+                  }}
+                >
+                  {badge.label}
+                </motion.span>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
       </div>
+
+      {/* scroll-down indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 rounded-full border-2 border-cream/40 flex justify-center pt-2"
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-cream/60" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -61,19 +61,31 @@ export default function LearningJourney() {
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={revealViewport}
+                      whileHover={{ scale: 1.1, y: -4 }}
                       transition={{
                         type: "spring",
                         stiffness: 260,
                         damping: 18,
                         delay: 0.35 + i * 0.25,
                       }}
-                      className="grid place-items-center w-16 h-16 rounded-full bg-ink text-cream text-2xl shadow-[0_10px_24px_rgba(11,29,58,0.2)]"
+                      className="grid place-items-center w-16 h-16 rounded-full bg-ink text-cream text-2xl shadow-[0_10px_24px_rgba(11,29,58,0.2)] cursor-default"
                     >
                       <Icon />
                     </motion.span>
-                    <span className="absolute -bottom-1.5 -right-1.5 grid place-items-center w-6 h-6 rounded-full bg-orange text-cream text-[11px] font-display font-bold border-2 border-cream">
+                    <motion.span
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={revealViewport}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 14,
+                        delay: 0.55 + i * 0.25,
+                      }}
+                      className="absolute -bottom-1.5 -right-1.5 grid place-items-center w-6 h-6 rounded-full bg-orange text-cream text-[11px] font-display font-bold border-2 border-cream"
+                    >
                       {i + 1}
-                    </span>
+                    </motion.span>
                   </div>
                   <p className="mt-5 font-display font-bold text-ink">{step.title}</p>
                   <p className="mt-2 text-sm text-ink/55 leading-relaxed max-w-[15rem]">
@@ -110,9 +122,20 @@ export default function LearningJourney() {
                   className="flex gap-5 items-start"
                 >
                   <div className="relative shrink-0">
-                    <span className="grid place-items-center w-16 h-16 rounded-full bg-ink text-cream text-2xl shadow-[0_10px_24px_rgba(11,29,58,0.2)]">
+                    <motion.span
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={revealViewport}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 18,
+                        delay: 0.25 + i * 0.15,
+                      }}
+                      className="grid place-items-center w-16 h-16 rounded-full bg-ink text-cream text-2xl shadow-[0_10px_24px_rgba(11,29,58,0.2)]"
+                    >
                       <Icon />
-                    </span>
+                    </motion.span>
                     <span className="absolute -bottom-1.5 -right-1.5 grid place-items-center w-6 h-6 rounded-full bg-orange text-cream text-[11px] font-display font-bold border-2 border-cream">
                       {i + 1}
                     </span>
