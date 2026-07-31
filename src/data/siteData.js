@@ -1,10 +1,10 @@
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Courses", href: "#programs" },
-  { label: "Masterclasses", href: "#masterclass" },
-  { label: "Mentors", href: "#why-us" },
-  { label: "Placements", href: "#placements" },
-  { label: "About Us", href: "#footer" },
+  { label: "Home", href: "/" },
+  { label: "Course", href: "/course" },
+  { label: "Mentors", href: "/mentors" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const heroBadges = [
@@ -330,3 +330,162 @@ export const contactInfo = {
   email: "hello@shikshasutraa.com",
   address: "SCO 123, Sector 34, Chandigarh, India",
 };
+
+export const courseCategories = [
+  "All Courses",
+  "Web Development",
+  "Data Science",
+  "Design",
+  "Marketing",
+  "Mobile Dev",
+  "Free",
+];
+
+export const coursesData = [
+  {
+    id: 1,
+    category: "Web Development",
+    tag: "Bootcamp",
+    tagStyle: "hot",
+    title: "Full Stack Web Development Bootcamp",
+    desc: "Master the MERN stack by building real-world, production-ready applications.",
+    duration: "6 Months",
+    mode: "Live + Recorded",
+    originalPrice: "₹34,999",
+    price: "₹24,999",
+    cta: "View Curriculum",
+  },
+  {
+    id: 2,
+    category: "Data Science",
+    tag: "Bootcamp",
+    tagStyle: "hot",
+    title: "Data Science & Machine Learning",
+    desc: "Go from Python basics to deploying real ML models in production.",
+    duration: "12 Months",
+    mode: "Live + Recorded",
+    originalPrice: "₹34,999",
+    price: "₹24,999",
+    cta: "View Curriculum",
+  },
+  {
+    id: 3,
+    category: "Design",
+    tag: "Bootcamp",
+    tagStyle: "hot",
+    title: "UI/UX Design Mastery",
+    desc: "Design like a pro — from wireframes to polished, hi-fi product designs.",
+    duration: "4 Months",
+    mode: "Live + Recorded",
+    originalPrice: "₹19,999",
+    price: "₹13,999",
+    cta: "View Curriculum",
+  },
+  {
+    id: 4,
+    category: "Web Development",
+    tag: "Upcoming",
+    tagStyle: "upcoming",
+    title: "React.js Developer Bootcamp",
+    desc: "Become a React pro by building fast, dynamic, real-world web apps.",
+    duration: "3 Months",
+    mode: "Live + Recorded",
+    originalPrice: "₹14,999",
+    price: "₹9,999",
+    cta: "View Curriculum",
+  },
+  {
+    id: 5,
+    category: "Free",
+    tag: "Free Masterclass",
+    tagStyle: "soon",
+    title: "Python for Data Science",
+    desc: "A hands-on introduction to Python fundamentals for data science.",
+    duration: "3 Hours",
+    mode: "Live",
+    originalPrice: null,
+    price: "Free",
+    cta: "Reserve Your Seat",
+  },
+  {
+    id: 6,
+    category: "Marketing",
+    tag: "Bootcamp",
+    tagStyle: "hot",
+    title: "Digital Marketing & Growth Hacking",
+    desc: "Learn SEO, paid ads, and growth strategies from scratch.",
+    duration: "2 Months",
+    mode: "Live + Recorded",
+    originalPrice: "₹12,999",
+    price: "₹8,999",
+    cta: "View Curriculum",
+  },
+];
+
+export const courseComparison = [
+  {
+    goal: "Career Goal",
+    bootcamp: "Job-ready in months",
+    selfPaced: "Learn at your own pace",
+    masterclass: "Explore before committing",
+  },
+  {
+    goal: "Learning Style",
+    bootcamp: "Live + Recorded",
+    selfPaced: "Recorded only",
+    masterclass: "Live only",
+  },
+  {
+    goal: "Mentor Support",
+    bootcamp: "1:1 Mentorship",
+    selfPaced: "Community support",
+    masterclass: "Live Q&A session",
+  },
+  {
+    goal: "Placement Aid",
+    bootcamp: "Guaranteed support",
+    selfPaced: "Self-driven",
+    masterclass: "Not included",
+  },
+];
+
+export const mentorSpotlight = {
+  name: "Arjun Rao",
+  role: "Ex-Google, Engineering Manager",
+  quote:
+    "I believe the best way to learn is by building, failing, and building again — with the right guidance beside you.",
+};
+
+export const mentorsData = [
+  {
+    name: "Isha Sharma",
+    role: "PM, Product Ranger",
+    skills: ["Product", "Strategy"],
+    socials: { linkedin: "#", twitter: "#" },
+  },
+  {
+    name: "Rohit Verma",
+    role: "Ex-Amazon, SDE II",
+    skills: ["Backend", "Systems"],
+    socials: { linkedin: "#", twitter: "#" },
+  },
+  {
+    name: "Priya Nair",
+    role: "Ex-Microsoft, Data Scientist",
+    skills: ["ML", "Python"],
+    socials: { linkedin: "#", twitter: "#" },
+  },
+  {
+    name: "Karan Bansal",
+    role: "Ex-Flipkart, Product Lead",
+    skills: ["Product", "Growth"],
+    socials: { linkedin: "#", twitter: "#" },
+  },
+];
+
+export const mentorStats = [
+  { value: "20+", label: "Mentors" },
+  { value: "10+", label: "Years Avg. Experience" },
+  { value: "500+", label: "Students Mentored" },
+  { value: "30+", label: "Companies Represented" },
+];

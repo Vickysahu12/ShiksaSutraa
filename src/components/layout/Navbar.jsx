@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { PiBookOpenTextDuotone } from "react-icons/pi";
 import { navLinks } from "../../data/siteData.js";
@@ -74,8 +75,8 @@ export default function Navbar() {
           {/* =========================
               LOGO
           ========================== */}
-          <a
-            href="#home"
+          <NavLink
+            to="/"
             className="flex shrink-0 items-center gap-2"
             onClick={() => setOpen(false)}
           >
@@ -96,7 +97,7 @@ export default function Navbar() {
                 Learn · Practice · Grow
               </span>
             </span>
-          </a>
+          </NavLink>
 
           {/* =========================
               DESKTOP NAV LINKS
@@ -104,12 +105,19 @@ export default function Navbar() {
           <ul className="hidden items-center gap-8 font-medium text-ink/70 lg:flex">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="relative py-1 transition-colors hover:text-ink after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-orange after:transition-all hover:after:w-full"
+                <NavLink
+                  to={link.href}
+                  end={link.href === "/"}
+                  className={({ isActive }) =>
+                    `relative py-1 transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:bg-orange after:transition-all ${
+                      isActive
+                        ? "text-ink after:w-full"
+                        : "hover:text-ink after:w-0 hover:after:w-full"
+                    }`
+                  }
                 >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -201,13 +209,18 @@ export default function Navbar() {
                       duration: 0.3,
                     }}
                   >
-                    <a
-                      href={link.href}
+                    <NavLink
+                      to={link.href}
+                      end={link.href === "/"}
                       onClick={() => setOpen(false)}
-                      className="block border-b border-ink/5 py-3.5 text-base"
+                      className={({ isActive }) =>
+                        `block border-b border-ink/5 py-3.5 text-base ${
+                          isActive ? "text-orange font-semibold" : ""
+                        }`
+                      }
                     >
                       {link.label}
-                    </a>
+                    </NavLink>
                   </motion.li>
                 ))}
               </ul>
