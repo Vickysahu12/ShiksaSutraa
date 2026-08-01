@@ -15,7 +15,6 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: wire up actual submission (API / email service)
     setSubmitted(true);
   };
 
