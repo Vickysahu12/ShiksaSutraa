@@ -10,7 +10,17 @@ const tagStyles = {
   hot: "bg-orange text-cream",
 };
 
-const rotations = ["-rotate-1", "rotate-1", "-rotate-1", "rotate-1", "rotate-1", "-rotate-1"];
+// rotation scoped to sm+ only — below sm the grid is a single column, and a stack
+// of tilted cards in one column reads as messy rather than playful (same fix as
+// AboutValues)
+const rotations = [
+  "sm:-rotate-1",
+  "sm:rotate-1",
+  "sm:-rotate-1",
+  "sm:rotate-1",
+  "sm:rotate-1",
+  "sm:-rotate-1",
+];
 
 export default function CourseCatalog() {
   const [active, setActive] = useState("All Courses");
@@ -21,7 +31,7 @@ export default function CourseCatalog() {
       : coursesData.filter((c) => c.category === active);
 
   return (
-    <section className="bg-cream py-20 sm:py-24">
+    <section className="bg-cream py-16 sm:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Filter pills */}
         <motion.div
@@ -61,55 +71,60 @@ export default function CourseCatalog() {
               key={course.id}
               variants={fadeUp}
               custom={i * 0.06}
-              className={`group relative flex flex-col rounded-2xl border border-ink/8 bg-white p-6 overflow-hidden shadow-[4px_5px_0_rgba(11,29,58,0.08)] transition-all duration-300 ${rotations[i % rotations.length]} hover:-translate-y-1.5 hover:rotate-0 hover:shadow-[6px_10px_0_rgba(255,107,26,0.15)]`}
+              className={`group relative ${rotations[i % rotations.length]} transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0`}
             >
-              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-orange/6 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-
+              {/* corner arrow button — now a direct child of the non-clipped outer div */}
               <button
                 aria-label={`View ${course.title}`}
-                className="absolute -right-2.5 -top-2.5 grid h-8 w-8 place-items-center rounded-full bg-orange text-cream shadow-[0_4px_12px_rgba(255,107,26,0.4)] transition-transform duration-300 hover:rotate-45 hover:scale-110"
+                className="absolute -right-2.5 -top-2.5 z-10 grid h-8 w-8 place-items-center rounded-full bg-orange text-cream shadow-[0_4px_12px_rgba(255,107,26,0.4)] transition-transform duration-300 hover:rotate-45 hover:scale-110"
               >
                 <FiArrowUpRight className="text-sm" />
               </button>
 
-              <span
-                className={`relative inline-block w-fit rounded-md px-3 py-1 text-[11px] font-bold uppercase tracking-wide ${tagStyles[course.tagStyle]}`}
-              >
-                {course.tag}
-              </span>
+              {/* inner card — this is the ONLY element with overflow-hidden now,
+                  so it clips the shimmer sweep but not the corner button above */}
+              <div className="relative flex flex-col h-full rounded-2xl border border-ink/8 bg-white p-6 overflow-hidden shadow-[4px_5px_0_rgba(11,29,58,0.08)] transition-shadow duration-300 group-hover:shadow-[6px_10px_0_rgba(255,107,26,0.15)] group-hover:border-orange/30">
+                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-orange/6 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
-              <h3 className="relative mt-4 font-display font-bold text-ink text-lg leading-snug min-h-[3.4rem]">
-                {course.title}
-              </h3>
-              <p className="relative mt-1.5 text-sm text-ink/50 leading-relaxed flex-1">
-                {course.desc}
-              </p>
-
-              <div className="relative mt-4 flex flex-wrap gap-4 text-xs font-medium text-ink/50">
-                <span className="flex items-center gap-1.5">
-                  <FiClock className="text-orange" />
-                  {course.duration}
+                <span
+                  className={`relative inline-block w-fit rounded-md px-3 py-1 text-[11px] font-bold uppercase tracking-wide ${tagStyles[course.tagStyle]}`}
+                >
+                  {course.tag}
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <FiMonitor className="text-orange" />
-                  {course.mode}
-                </span>
-              </div>
 
-              <div className="relative mt-5 flex items-center gap-2">
-                {course.originalPrice && (
-                  <span className="text-sm text-ink/35 line-through">
-                    {course.originalPrice}
+                <h3 className="relative mt-4 font-display font-bold text-ink text-lg leading-snug min-h-[3.4rem]">
+                  {course.title}
+                </h3>
+                <p className="relative mt-1.5 text-sm text-ink/50 leading-relaxed flex-1">
+                  {course.desc}
+                </p>
+
+                <div className="relative mt-4 flex flex-wrap gap-4 text-xs font-medium text-ink/50">
+                  <span className="flex items-center gap-1.5">
+                    <FiClock className="text-orange" />
+                    {course.duration}
                   </span>
-                )}
-                <span className="font-display font-extrabold text-xl text-ink">
-                  {course.price}
-                </span>
-              </div>
+                  <span className="flex items-center gap-1.5">
+                    <FiMonitor className="text-orange" />
+                    {course.mode}
+                  </span>
+                </div>
 
-              <button className="relative mt-5 w-full rounded-xl bg-ink py-3 font-display text-sm font-semibold text-cream transition-colors group-hover:bg-orange">
-                {course.cta}
-              </button>
+                <div className="relative mt-5 flex items-center gap-2">
+                  {course.originalPrice && (
+                    <span className="text-sm text-ink/35 line-through">
+                      {course.originalPrice}
+                    </span>
+                  )}
+                  <span className="font-display font-extrabold text-xl text-ink">
+                    {course.price}
+                  </span>
+                </div>
+
+                <button className="relative mt-5 w-full rounded-xl bg-ink py-3 font-display text-sm font-semibold text-cream transition-colors group-hover:bg-orange">
+                  {course.cta}
+                </button>
+              </div>
             </motion.div>
           ))}
         </motion.div>

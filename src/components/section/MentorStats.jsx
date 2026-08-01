@@ -8,6 +8,7 @@ import {
 } from "react-icons/pi";
 import { mentorStats } from "../../data/siteData";
 import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
+import SectionSeam from "./SectionSeam";
 
 const icons = [PiUsersThreeDuotone, PiClockDuotone, PiStudentDuotone, PiBuildingsDuotone];
 
@@ -42,45 +43,48 @@ function Counter({ raw }) {
 
 export default function MentorStats() {
   return (
-    <section className="bg-cream py-16 sm:py-20">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8">
-        <motion.div
-          variants={staggerContainer(0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={revealViewport}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 rounded-3xl bg-white border border-ink/8 shadow-[4px_5px_0_rgba(11,29,58,0.06)] px-6 sm:px-10 py-8 sm:py-9"
-        >
-          {mentorStats.map((stat, i) => {
-            const Icon = icons[i];
-            return (
-              <motion.div
-                key={stat.label}
-                variants={fadeUp}
-                custom={i * 0.08}
-                className="flex flex-col items-center justify-center text-center gap-2"
-              >
-                <motion.span
-                  initial={{ scale: 0, rotate: -20 }}
-                  whileInView={{ scale: 1, rotate: 0 }}
-                  viewport={revealViewport}
-                  whileHover={{ rotate: -12, scale: 1.08 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 + i * 0.08 }}
-                  className="grid place-items-center w-11 h-11 rounded-xl bg-orange/10 text-orange text-xl"
+    <>
+      <SectionSeam />
+      <section className="bg-cream py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <motion.div
+            variants={staggerContainer(0.1)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 rounded-3xl bg-white border border-ink/8 shadow-[4px_5px_0_rgba(11,29,58,0.06)] px-6 sm:px-10 py-8 sm:py-9"
+          >
+            {mentorStats.map((stat, i) => {
+              const Icon = icons[i];
+              return (
+                <motion.div
+                  key={stat.label}
+                  variants={fadeUp}
+                  custom={i * 0.08}
+                  className="flex flex-col items-center justify-center text-center gap-2"
                 >
-                  <Icon />
-                </motion.span>
-                <p className="font-display font-extrabold text-xl sm:text-2xl text-ink leading-none">
-                  <Counter raw={stat.value} />
-                </p>
-                <p className="text-xs sm:text-sm text-ink/50 font-medium leading-tight max-w-[7rem]">
-                  {stat.label}
-                </p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </div>
-    </section>
+                  <motion.span
+                    initial={{ scale: 0, rotate: -20 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={revealViewport}
+                    whileHover={{ rotate: -12, scale: 1.08 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 + i * 0.08 }}
+                    className="grid place-items-center w-11 h-11 rounded-xl bg-orange/10 text-orange text-xl"
+                  >
+                    <Icon />
+                  </motion.span>
+                  <p className="font-display font-extrabold text-xl sm:text-2xl text-ink leading-none">
+                    <Counter raw={stat.value} />
+                  </p>
+                  <p className="text-xs sm:text-sm text-ink/50 font-medium leading-tight max-w-[7rem]">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

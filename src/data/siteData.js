@@ -450,7 +450,7 @@ export const courseComparison = [
 ];
 
 export const mentorSpotlight = {
-  name: "Arjun Rao",
+  name: "Shweta Shah",
   role: "Ex-Google, Engineering Manager",
   quote:
     "I believe the best way to learn is by building, failing, and building again — with the right guidance beside you.",
@@ -458,8 +458,8 @@ export const mentorSpotlight = {
 
 export const mentorsData = [
   {
-    name: "Isha Sharma",
-    role: "PM, Product Ranger",
+    name: "Shweta Shah",
+    role: "Ex-Google, Engineering Manager",
     skills: ["Product", "Strategy"],
     socials: { linkedin: "#", twitter: "#" },
   },
@@ -470,14 +470,14 @@ export const mentorsData = [
     socials: { linkedin: "#", twitter: "#" },
   },
   {
-    name: "Priya Nair",
-    role: "Ex-Microsoft, Data Scientist",
-    skills: ["ML", "Python"],
+    name: "Dimple Pathak",
+    role: "Graphic Designer",
+    skills: ["UI/UX", "Branding"],
     socials: { linkedin: "#", twitter: "#" },
   },
   {
-    name: "Karan Bansal",
-    role: "Ex-Flipkart, Product Lead",
+    name: "Karan Pathak",
+    role: "Marketing Lead, GrowthX",
     skills: ["Product", "Growth"],
     socials: { linkedin: "#", twitter: "#" },
   },
@@ -488,4 +488,42 @@ export const mentorStats = [
   { value: "10+", label: "Years Avg. Experience" },
   { value: "500+", label: "Students Mentored" },
   { value: "30+", label: "Companies Represented" },
+];
+
+export const galleryCategories = [
+  { key: "all", label: "All" },
+  { key: "photo", label: "Photos" },
+  { key: "video", label: "Videos" },
+];
+
+export const galleryItems = [
+  { id: 1, type: "photo", category: "Classroom", src: "/media/gallery-1.jpg", thumbnail: "/media/gallery-1.jpg", alt: "Live coding session", caption: "Live coding session — Batch 12" },
+  { id: 2, type: "video", category: "Demo Day", src: "/media/demo-day.mp4", thumbnail: "/media/gallery-2.jpg", caption: "Demo Day highlights" },
+  { id: 3, type: "photo", category: "Hackathon", src: "/media/gallery-3.jpg", thumbnail: "/media/gallery-3.jpg", alt: "Hackathon team huddle", caption: "48-hour hackathon" },
+  { id: 4, type: "photo", category: "Workshop", src: "/media/gallery-4.jpg", thumbnail: "/media/gallery-4.jpg", alt: "Design workshop", caption: "UI/UX design workshop" },
+  { id: 5, type: "video", category: "Classroom", src: "/media/classroom-tour.mp4", thumbnail: "/media/gallery-5.jpg", caption: "Campus walkthrough" },
+  { id: 6, type: "photo", category: "Demo Day", src: "/media/gallery-6.jpg", thumbnail: "/media/gallery-6.jpg", alt: "Students presenting", caption: "Final project presentations" },
+  { id: 7, type: "photo", category: "Hackathon", src: "/media/gallery-7.jpg", thumbnail: "/media/gallery-7.jpg", alt: "Award ceremony", caption: "Hackathon winners" },
+  { id: 8, type: "photo", category: "Workshop", src: "/media/gallery-8.jpg", thumbnail: "/media/gallery-8.jpg", alt: "Group discussion", caption: "Career mentorship session" },
+];
+
+export const aboutValues = [
+  { title: "Learn by Doing", desc: "Every module ends in a real, portfolio-worthy project — not just quizzes." },
+  { title: "Mentors, Not Just Instructors", desc: "Every mentor has shipped real products at real companies." },
+  { title: "No Fluff Curriculum", desc: "We cut theory that doesn't translate into hireable skills." },
+  { title: "Community First", desc: "You learn alongside peers who push you to level up, not just watch." },
+];
+
+export const aboutMilestones = [
+  { year: "2022", title: "Founded", desc: "Started with a single cohort of 20 students and one mentor." },
+  { year: "2023", title: "First Batch Placed", desc: "Our first cohort graduated with a 90% placement rate." },
+  { year: "2024", title: "1,000th Student", desc: "Crossed 1,000 learners across 6 course tracks." },
+  { year: "2025", title: "30+ Hiring Partners", desc: "Built a hiring network spanning startups to enterprises." },
+];
+
+export const contactCards = [
+  { icon: "map", label: "Office", value: "4th Floor, Tech Park, Bengaluru, India" },
+  { icon: "phone", label: "Call Us", value: "+91 98765 43210" },
+  { icon: "mail", label: "Email Us", value: "hello@shikshasutraa.com" },
+  { icon: "clock", label: "Office Hours", value: "Mon–Sat, 10 AM – 7 PM" },
 ];
