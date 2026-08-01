@@ -8,7 +8,6 @@ export default function GalleryCTA() {
   return (
     <>
       <SectionSeam />
-      {/* pt-4/6 added so this doesn't sit flush against GalleryShowcase above it */}
       <section className="px-5 sm:px-8 pt-4 sm:pt-6 pb-20 sm:pb-24">
         <motion.div
           variants={staggerContainer(0.1)}
