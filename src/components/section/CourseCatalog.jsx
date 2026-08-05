@@ -10,17 +10,7 @@ const tagStyles = {
   hot: "bg-orange text-cream",
 };
 
-// rotation scoped to sm+ only — below sm the grid is a single column, and a stack
-// of tilted cards in one column reads as messy rather than playful (same fix as
-// AboutValues)
-const rotations = [
-  "sm:-rotate-1",
-  "sm:rotate-1",
-  "sm:-rotate-1",
-  "sm:rotate-1",
-  "sm:rotate-1",
-  "sm:-rotate-1",
-];
+const rotations = ["-rotate-1", "rotate-1", "-rotate-1", "rotate-1", "rotate-1", "-rotate-1"];
 
 export default function CourseCatalog() {
   const [active, setActive] = useState("All Courses");
@@ -31,7 +21,7 @@ export default function CourseCatalog() {
       : coursesData.filter((c) => c.category === active);
 
   return (
-    <section className="bg-cream py-16 sm:py-20 lg:py-24">
+    <section className="bg-cream py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Filter pills */}
         <motion.div
@@ -73,7 +63,7 @@ export default function CourseCatalog() {
               custom={i * 0.06}
               className={`group relative ${rotations[i % rotations.length]} transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0`}
             >
-              {/* corner arrow button — now a direct child of the non-clipped outer div */}
+              {/* corner arrow — direct child of outer div, never clipped */}
               <button
                 aria-label={`View ${course.title}`}
                 className="absolute -right-2.5 -top-2.5 z-10 grid h-8 w-8 place-items-center rounded-full bg-orange text-cream shadow-[0_4px_12px_rgba(255,107,26,0.4)] transition-transform duration-300 hover:rotate-45 hover:scale-110"
@@ -81,8 +71,7 @@ export default function CourseCatalog() {
                 <FiArrowUpRight className="text-sm" />
               </button>
 
-              {/* inner card — this is the ONLY element with overflow-hidden now,
-                  so it clips the shimmer sweep but not the corner button above */}
+              {/* inner card — only this clips (shimmer), not the corner button */}
               <div className="relative flex flex-col h-full rounded-2xl border border-ink/8 bg-white p-6 overflow-hidden shadow-[4px_5px_0_rgba(11,29,58,0.08)] transition-shadow duration-300 group-hover:shadow-[6px_10px_0_rgba(255,107,26,0.15)] group-hover:border-orange/30">
                 <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-orange/6 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
@@ -110,18 +99,26 @@ export default function CourseCatalog() {
                   </span>
                 </div>
 
-                <div className="relative mt-5 flex items-center gap-2">
-                  {course.originalPrice && (
-                    <span className="text-sm text-ink/35 line-through">
-                      {course.originalPrice}
+                {/* price section only renders if pricing data exists — since our real
+                    programs use a "Prebook" model with no fixed price shown */}
+                {course.price && (
+                  <div className="relative mt-5 flex items-center gap-2">
+                    {course.originalPrice && (
+                      <span className="text-sm text-ink/35 line-through">
+                        {course.originalPrice}
+                      </span>
+                    )}
+                    <span className="font-display font-extrabold text-xl text-ink">
+                      {course.price}
                     </span>
-                  )}
-                  <span className="font-display font-extrabold text-xl text-ink">
-                    {course.price}
-                  </span>
-                </div>
+                  </div>
+                )}
 
-                <button className="relative mt-5 w-full rounded-xl bg-ink py-3 font-display text-sm font-semibold text-cream transition-colors group-hover:bg-orange">
+                <button
+                  className={`relative w-full rounded-xl bg-ink py-3 font-display text-sm font-semibold text-cream transition-colors group-hover:bg-orange ${
+                    course.price ? "mt-5" : "mt-6"
+                  }`}
+                >
                   {course.cta}
                 </button>
               </div>

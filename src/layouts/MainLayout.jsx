@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/layout/Navbar.jsx";
 import Footer from "../components/layout/Footer.jsx";
 
@@ -17,6 +18,32 @@ export default function MainLayout() {
 
   return (
     <div className="font-body bg-cream overflow-x-hidden">
+      {/* site-wide structured data — tells Google this is an educational
+          organization, helps with rich results in search */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            name: "ShikshaSutraa",
+            url: "https://shikshasutraa.com",
+            logo: "https://shikshasutraa.com/logo.png",
+            description:
+              "Career-focused learning platform offering live, mentor-led bootcamps in Digital Marketing, Graphic Design, and Content Creation.",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Chandigarh",
+              addressCountry: "IN",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+91-98765-43210",
+              contactType: "customer service",
+            },
+          })}
+        </script>
+      </Helmet>
+
       <ScrollToTop />
       <Navbar />
       <AnimatePresence mode="wait">

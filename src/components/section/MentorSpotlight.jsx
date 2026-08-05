@@ -3,7 +3,7 @@ import { PiQuotesDuotone } from "react-icons/pi";
 import { mentorSpotlight } from "../../data/siteData";
 import { fadeUp, revealViewport } from "../../utils/animation";
 import SectionSeam from "./SectionSeam";
-import spotlightPhoto from "../../assets/images/mentors/mentor6.webp";
+import spotlightPhoto from "../../assets/images/mentors/mentor12.webp";
 
 export default function MentorSpotlight() {
   return (

@@ -3,12 +3,17 @@ import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { mentorsData } from "../../data/siteData";
 import { fadeUp, revealViewport, staggerContainer } from "../../utils/animation";
 import SectionSeam from "./SectionSeam";
-import mentorA from "../../assets/images/mentors/mentor4.webp";
-import mentorB from "../../assets/images/mentors/mentor5.webp";
-import mentorC from "../../assets/images/mentors/mentor6.webp";
-import mentorD from "../../assets/images/mentors/mentor7.webp";
+import mentorA from "../../assets/images/mentors/mentor12.webp";
+import mentorB from "../../assets/images/mentors/mentor11.webp";
 
-const photos = [mentorA, mentorB, mentorC, mentorD];
+// only pair up data with the photos we actually have right now —
+// add more entries to `photos` as more mentor images come in, no other
+// code needs to change
+const photos = [mentorA, mentorB];
+const mentors = mentorsData
+  .slice(0, photos.length)
+  .map((mentor, i) => ({ ...mentor, photo: photos[i] }));
+
 const rotations = ["-rotate-1", "rotate-1", "-rotate-1", "rotate-1"];
 
 export default function MentorsGrid() {
@@ -32,31 +37,31 @@ export default function MentorsGrid() {
             </p>
           </motion.div>
 
+          {/* flex-wrap + justify-center instead of a fixed grid-cols-4 —
+              this self-adjusts and stays centered whether there are 2, 3, or 6 mentors */}
           <motion.div
             variants={staggerContainer(0.08)}
             initial="hidden"
             whileInView="visible"
             viewport={revealViewport}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+            className="flex flex-wrap justify-center gap-5 sm:gap-6"
           >
-            {mentorsData.map((mentor, i) => (
+            {mentors.map((mentor, i) => (
               <motion.div
                 key={mentor.name}
                 variants={fadeUp}
                 custom={i * 0.08}
-                className={`group relative flex flex-col h-full rounded-2xl border bg-white p-4 sm:p-5 shadow-[3px_4px_0_rgba(11,29,58,0.06)] transition-all duration-300 ${rotations[i % rotations.length]} hover:-translate-y-1.5 hover:rotate-0 hover:border-orange/30 hover:shadow-[5px_8px_0_rgba(255,107,26,0.15)] ${
-                  i === 1 ? "border-orange/40" : "border-ink/8"
-                }`}
+                className={`group relative flex flex-col w-full max-w-[15rem] sm:w-56 rounded-2xl border border-ink/8 bg-white p-4 sm:p-5 shadow-[3px_4px_0_rgba(11,29,58,0.06)] transition-all duration-300 ${rotations[i % rotations.length]} hover:-translate-y-1.5 hover:rotate-0 hover:border-orange/30 hover:shadow-[5px_8px_0_rgba(255,107,26,0.15)]`}
               >
                 <div className="rounded-xl overflow-hidden aspect-square">
                   <img
-                    src={photos[i % photos.length]}
+                    src={mentor.photo}
                     alt={mentor.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
-                <div className="mt-3 flex-1">
+                <div className="mt-3">
                   <p className="font-display font-bold text-ink text-sm sm:text-base leading-snug">
                     {mentor.name}
                   </p>

@@ -5,6 +5,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { PiBookOpenTextDuotone } from "react-icons/pi";
 import { navLinks } from "../../data/siteData.js";
 import EnrollmentModal from "../section/EnrollmentModal.jsx";
+import logo from "../../assets/images/Logoo.webp";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -80,23 +81,13 @@ export default function Navbar() {
             className="flex shrink-0 items-center gap-2"
             onClick={() => setOpen(false)}
           >
-            <motion.span
-              whileHover={{ rotate: -8, scale: 1.08 }}
-              transition={{ type: "spring", stiffness: 300, damping: 12 }}
-              className="grid h-10 w-10 place-items-center rounded-xl bg-ink text-cream"
-            >
-              <PiBookOpenTextDuotone className="text-xl" />
-            </motion.span>
-
-            <span className="leading-tight">
-              <span className="block font-display text-lg font-bold tracking-tight text-ink">
-                Shiksha<span className="text-orange">Sutraa</span>
-              </span>
-
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50">
-                Learn · Practice · Grow
-              </span>
-            </span>
+            <motion.img
+  src={logo}
+  alt="ShikshaSutraa"
+  whileHover={{ scale: 1.05 }}
+  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+  className="h-12 sm:h-14 lg:h-16 w-auto object-contain"
+/>
           </NavLink>
 
           {/* =========================
@@ -178,15 +169,14 @@ export default function Navbar() {
             >
               {/* Drawer Header */}
               <div className="flex shrink-0 items-center justify-between border-b border-ink/8 px-5 py-4">
-                <span className="flex items-center gap-2">
-                  <span className="grid h-9 w-9 place-items-center rounded-lg bg-ink text-cream">
-                    <PiBookOpenTextDuotone className="text-lg" />
-                  </span>
-
-                  <span className="font-display font-bold text-ink">
-                    Shiksha<span className="text-orange">Sutraa</span>
-                  </span>
-                </span>
+                <motion.img
+  src={logo}
+  alt="ShikshaSutraa"
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.3 }}
+  className="h-10 w-auto object-contain"
+/>
 
                 <button
                   onClick={() => setOpen(false)}
